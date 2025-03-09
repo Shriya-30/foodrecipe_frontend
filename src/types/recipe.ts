@@ -1,19 +1,19 @@
 export interface Recipe {
-  id: string;
-  created_at: string;
+  images: string[];
+  _id: any;
+  createdAt: string;
   title: string;
   description: string;
   ingredients: string[];
   instructions: string[];
-  cooking_time: number;
+  prepTime: number;
   servings: number;
-  image_url: string;
-  user_id: string;
+  user: string;
   category: string;
 }
 
 export interface User {
-  id: string;
+  _id: string;
   email: string;
-  created_at: string;
+  createdAt: string;
 }
