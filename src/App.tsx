@@ -8,6 +8,7 @@ import RecipeDetails from './pages/RecipeDetails';
 import EditRecipe from './pages/EditRecipe';
 import Profile from './pages/Profile';
 import Auth from './pages/Auth';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
+        <Footer />
         {/* <Toaster position="bottom-right" /> */}
       </div>
     </Router>

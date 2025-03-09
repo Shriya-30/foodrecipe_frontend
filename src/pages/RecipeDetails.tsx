@@ -12,53 +12,7 @@ function RecipeDetails() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
 
-  // useEffect(() => {
-  //   const fetchRecipe = async () => {
-  //     if (!id) return;
-
-      // const { data: recipe, error } = await supabase
-      //   .from('recipes')
-      //   .select('*')
-      //   .eq('id', id)
-      //   .single();
-
-      // if (error) {
-      //   console.error('Error fetching recipe:', error);
-      //   navigate('/');
-      //   return;
-      // }
-
-    //   setRecipe(recipe);
-    //   setLoading(false);
-    // };
-
-  //   const fetchUser = async () => {
-  //     const { data: { user } } = await supabase.auth.getUser();
-  //     setUser(user);
-  //   };
-
-  //   fetchRecipe();
-  //   fetchUser();
-  // }, [id, navigate]);
-
-  // const handleDelete = async () => {
-  //   if (!recipe || !window.confirm('Are you sure you want to delete this recipe?')) return;
-
-  //   try {
-  //     const { error } = await supabase
-  //       .from('recipes')
-  //       .delete()
-  //       .eq('id', recipe.id);
-
-  //     if (error) throw error;
-
-  //     toast.success('Recipe deleted successfully');
-  //     navigate('/');
-  //   } catch (error: any) {
-  //     toast.error(error.message);
-  //   }
-  // };
-
+  
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">

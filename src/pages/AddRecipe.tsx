@@ -113,7 +113,24 @@ function AddformData() {
     }
     try {
       // setLoading(true)
-      const response=await createRecipe(formData);
+      setLoading(true);
+      const formDataToSend = new FormData();
+
+      formDataToSend.append("title", formData.title);
+      formDataToSend.append("description", formData.description);
+      formDataToSend.append("category", formData.category);
+      formDataToSend.append("servings", String(formData.servings));
+      formDataToSend.append("prepTime", String(formData.prepTime));
+
+      // Append images
+      formData.images.forEach((image) => {
+        formDataToSend.append("images", image.file);
+      });
+
+      // Append ingredients and instructions as JSON strings
+      formDataToSend.append("ingredients", JSON.stringify(formData.ingredients));
+      formDataToSend.append("instructions", JSON.stringify(formData.instructions));
+      const response=await createRecipe(formDataToSend);
       setLoading(false);
       console.log("response",response);
       toast.success("Recipe created successfully");
